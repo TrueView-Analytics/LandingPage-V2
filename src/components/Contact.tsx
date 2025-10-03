@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -49,19 +49,15 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900 mb-1">Email</p>
-                  <p className="text-gray-600">contact@trueviewanalytics.com</p>
+                  <p className="text-gray-600">
+                    <a href="mailto:info@trueviewanalytics.com" className="text-blue-600 underline">
+                      info@trueviewanalytics.com
+                    </a>
+                  </p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Phone className="text-blue-600" size={24} />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900 mb-1">Phone</p>
-                  <p className="text-gray-600">+34 XXX XXX XXX</p>
-                </div>
-              </div>
+              
 
               <div className="flex items-start space-x-4">
                 <div className="bg-blue-100 p-3 rounded-lg">
@@ -83,7 +79,7 @@ export default function Contact() {
           </div>
 
           <div className="bg-gray-50 p-8 rounded-2xl">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form className="space-y-6" action="https://formspree.io/f/xrbavaky" method="POST">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
                   Full Name

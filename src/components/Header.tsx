@@ -1,6 +1,7 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import favicon from '../assets/Favicon Transparent.ico';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,13 +24,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-3">
-            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50 10L80 25L50 40L20 25L50 10Z" fill="#4169E1"/>
-              <path d="M50 30L70 40L50 50L30 40L50 30Z" fill="#4169E1"/>
-              <path d="M50 50L60 55L50 60L40 55L50 50Z" fill="#4169E1"/>
-              <path d="M50 65L55 67.5L50 70L45 67.5L50 65Z" fill="#4169E1"/>
-              <path d="M50 75L52.5 76.25L50 77.5L47.5 76.25L50 75Z" fill="#4169E1"/>
-            </svg>
+            <img src={favicon} alt="TrueView Analytics logo" width={40} height={40} className="block" />
             <div>
               <h1 className="text-xl font-bold text-gray-900">TrueView Analytics</h1>
               <p className="text-xs text-blue-600 tracking-wide">SEE BEYOND DATA</p>

@@ -31,7 +31,7 @@ export default function ServicesPage() {
             </p>
 
             <div className="space-y-16">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-2 gap-12 items-center" id="SaaS-Hotels">
                 <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl">
                   <div className="bg-white inline-flex p-4 rounded-xl mb-6 shadow-md">
                     <Hotel size={40} className="text-blue-600" />
@@ -80,7 +80,7 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-2 gap-12 items-center" id="SaaS-Pymes">
                 <div className="order-2 lg:order-1 space-y-6">
                   <div className="bg-blue-50 p-6 rounded-xl">
                     <h4 className="font-bold text-gray-900 mb-2">Perfect For</h4>
@@ -100,7 +100,7 @@ export default function ServicesPage() {
                   <div className="bg-white inline-flex p-4 rounded-xl mb-6 shadow-md">
                     <Building2 size={40} className="text-blue-600" />
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">SaaS SMEs</h3>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-4">SaaS Pymes</h3>
                   <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                     Flexible software solution for small and medium enterprises across all service industries to enhance customer experience through data intelligence.
                   </p>
@@ -129,7 +129,7 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-12 text-white">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-12 text-white" id="Enterprise-CX">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                   <div>
                     <div className="bg-white/20 inline-flex p-4 rounded-xl mb-6">
@@ -182,7 +182,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="border-t border-gray-200 pt-20">
+          <div className="border-t border-gray-200 pt-20" id="Additional-Services">
             <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">Additional Services</h2>
             <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16">
               Specialized consulting and custom solutions for unique business challenges

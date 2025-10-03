@@ -33,12 +33,6 @@ export default function Hero() {
               <span>Get Started</span>
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </button>
-            <button
-              onClick={() => document.getElementById('platform')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors font-semibold text-lg border-2 border-blue-600"
-            >
-              Learn More
-            </button>
           </div>
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -47,16 +41,16 @@ export default function Hero() {
               <div className="text-sm text-gray-600">Travelers read reviews before booking</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">+11.2%</div>
-              <div className="text-sm text-gray-600">Price increase potential</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">+13%</div>
+              <div className="text-sm text-gray-600">Rate premium achievable with stronger reputation</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">+1.42%</div>
-              <div className="text-sm text-gray-600">RevPAR improvement</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">+1.4%</div>
+              <div className="text-sm text-gray-600">RevPAR improvement per +1 % reputation score</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">+0.54%</div>
-              <div className="text-sm text-gray-600">Occupancy boost</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">+2 pts</div>
+              <div className="text-sm text-gray-600">Increase in OTA ratings after applying data-driven actions</div>
             </div>
           </div>
         </div>

@@ -63,7 +63,7 @@ export default function Platform() {
 
             <div className="mt-8 p-6 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl text-white">
               <p className="text-sm font-semibold mb-2">Industry Impact</p>
-              <p className="text-2xl font-bold">+1 reputation point = +11.2% price increase potential</p>
+              <p className="text-2xl font-bold">Up to +9.4 % RevPAR growth through data-driven strategies</p>
             </div>
           </div>
         </div>
