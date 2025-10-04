@@ -22,7 +22,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="/services/#SaaS-Hotels" className="hover:text-white transition-colors">SaaS Hotels</a></li>
+               <li><Link to="/services/#SaaS-Hotels" className="hover:text-white transition-colors">SaaS Hotels</Link></li>
               <li><a href="/services/#SaaS-Pymes" className="hover:text-white transition-colors">SaaS Pymes</a></li>
               <li><a href="/services/#Enterprise-CX" className="hover:text-white transition-colors">Enterprise CX</a></li>
               <li><a href="/services/#Additional-Services" className="hover:text-white transition-colors">Additional Services</a></li>
