@@ -1,6 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import favicon from '../assets/Favicon Transparent.ico';
 
 export default function Header() {
@@ -8,16 +8,30 @@ export default function Header() {
   const location = useLocation();
 
   const scrollToSection = (id: string) => {
-    if (location.pathname !== '/') {
-      window.location.href = `/#${id}`;
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+  const location = useLocation(); // to get the current route
+  const navigate = useNavigate(); // to change the route
+  
+  // Check if we are on the home page or another route
+  if (location.pathname === '/') {
+    // If on the homepage, just scroll smoothly to the section
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMenuOpen(false);
-  };
+  } else {
+    // If not on the homepage, navigate to the current path + hash (for smooth scroll)
+    navigate(`${location.pathname}#${id}`, { replace: true });
+    
+    // Optional: smooth scroll to the section if on the same page
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // Optionally close the menu if open
+  setIsMenuOpen(false);
+};
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
