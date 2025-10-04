@@ -47,9 +47,11 @@ export default function Header() {
             <Link to="/services" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Services
             </Link>
-            <button onClick={() => scrollToSection('contact')} className="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+            <Link to="/#contact">
+            <button className="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium">
               Contact
             </button>
+            </Link>
           </div>
 
           <button
@@ -63,15 +65,19 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <div className="flex flex-col space-y-4">
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left">
+              <Link to="/#about">
+              <button onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left">
                 About Us
               </button>
+              </Link>
               <Link to="/services" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left">
                 Services
               </Link>
-              <button onClick={() => scrollToSection('contact')} className="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium text-left">
+              <Link to="/#contact">
+              <button onClick={() => setIsMenuOpen(false)} className="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium text-left">
                 Contact
               </button>
+              </Link>
             </div>
           </div>
         )}

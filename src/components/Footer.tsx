@@ -22,19 +22,19 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-400">
-               <li><Link to="/services/#SaaS-Hotels" className="hover:text-white transition-colors">SaaS Hotels</Link></li>
-              <li><a href="/services/#SaaS-Pymes" className="hover:text-white transition-colors">SaaS Pymes</a></li>
-              <li><a href="/services/#Enterprise-CX" className="hover:text-white transition-colors">Enterprise CX</a></li>
-              <li><a href="/services/#Additional-Services" className="hover:text-white transition-colors">Additional Services</a></li>
+              <li><Link to="/services/#SaaS-Hotels" className="hover:text-white transition-colors">SaaS Hotels</Link></li>
+              <li><Link to="/services/#SaaS-Pymes" className="hover:text-white transition-colors">SaaS Pymes</Link></li>
+              <li><Link to="/services/#Enterprise-CX" className="hover:text-white transition-colors">Enterprise CX</Link></li>
+              <li><Link to="/services/#Additional-Services" className="hover:text-white transition-colors">Additional Services</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="/#about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#platform" className="hover:text-white transition-colors">Platform</a></li>
-              <li><a href="/#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><Link to="/#about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><a className="hover:text-white transition-colors">Platform</a></li>
+              <li><Link to="/#contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
