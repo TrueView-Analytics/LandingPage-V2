@@ -1,8 +1,8 @@
 {
   "name": "vite-react-typescript-starter",
-  "homepage": "trueviewanalytics.com",
+  "homepage": "https://trueviewanalytics.com/",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

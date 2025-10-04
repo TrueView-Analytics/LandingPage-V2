@@ -9,10 +9,7 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
+  // form is submitted via native POST to Formspree; keep formData for optional client-side use
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -88,7 +85,6 @@ export default function Contact() {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
                   placeholder="John Doe"
@@ -104,7 +100,6 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
                   placeholder="john@example.com"
@@ -120,7 +115,6 @@ export default function Contact() {
                   type="text"
                   id="company"
                   name="company"
-                  value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
                   placeholder="Your Hotel or Business"
@@ -135,7 +129,6 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
                   onChange={handleChange}
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all resize-none"

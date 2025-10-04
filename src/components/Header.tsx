@@ -1,30 +1,11 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import favicon from '../assets/Favicon Transparent.ico';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-
-  const scrollToSection = (id: string) => {
-    // Get the current path
-    const navigate = useNavigate();
-
-    if (location.pathname !== '/') {
-      // If not on the main page, use React Router to navigate (without reloading)
-      navigate(`/#${id}`);
-    } else {
-      // If on the home page, scroll to the element
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    // Optionally close the menu if open
-    setIsMenuOpen(false);
-  };
+  // location unused after removing scroll helper
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
