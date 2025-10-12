@@ -9,7 +9,7 @@ export default function ServicesPage() {
         className="py-24 px-4 sm:px-6 lg:px-8 text-white bg-cover bg-center"
         style={{ backgroundImage: `url(${servicesImg})` }}
       >
-        <div className="absolute inset-0 bg-black/50 pointer-events-none" aria-hidden="true" />
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true" />
         <div className="relative max-w-7xl mx-auto">
           <Link
             to="/"
