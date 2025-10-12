@@ -1,4 +1,5 @@
 import favicon from '../assets/Favicon Transparent.ico';
+import logoText from '../assets/logo_text.png';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -8,10 +9,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img src={favicon} alt="TrueView Analytics logo" width={40} height={40} className="block" />
+              <img src={favicon} alt="TrueView Analytics logo" className="h-12 md:h-16 w-auto block" />
               <div>
-                <h3 className="text-xl font-bold">TrueView Analytics</h3>
-                <p className="text-sm text-blue-400">SEE BEYOND DATA</p>
+                <img src={logoText} alt="TrueView Analytics" className="h-12 md:h-16" />
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed max-w-md">
