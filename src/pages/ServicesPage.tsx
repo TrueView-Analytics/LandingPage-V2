@@ -1,11 +1,16 @@
 import { Hotel, Building2, TrendingUp, Database, MessageSquare, Target, Check, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import servicesImg from '../assets/services.jpg';
 
 export default function ServicesPage() {
   return (
     <div className="pt-20">
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
-        <div className="max-w-7xl mx-auto">
+      <section
+        className="py-24 px-4 sm:px-6 lg:px-8 text-white bg-cover bg-center"
+        style={{ backgroundImage: `url(${servicesImg})` }}
+      >
+        <div className="absolute inset-0 bg-black/50 pointer-events-none" aria-hidden="true" />
+        <div className="relative max-w-7xl mx-auto">
           <Link
             to="/"
             className="inline-flex items-center space-x-2 text-white/80 hover:text-white mb-8 transition-colors"
