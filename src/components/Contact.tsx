@@ -76,7 +76,7 @@ export default function Contact() {
           </div>
 
           <div className="bg-gray-50 p-8 rounded-2xl">
-            <form className="space-y-6" action="https://formspree.io/f/xrbavaky" method="POST">
+            <form className="space-y-6" action="https://formspree.io/f/mvgvrpoj" method="POST">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
                   Full Name
