@@ -1,4 +1,5 @@
 import { Users, Megaphone, Target } from 'lucide-react';
+import insightsImage from '../assets/insights.png';
 
 export default function Problems() {
   const problems = [
@@ -65,6 +66,15 @@ export default function Problems() {
               </div>
             );
           })}
+        </div>
+
+        {/* Insights Image */}
+        <div className="mt-20 text-center">
+          <img 
+            src={insightsImage} 
+            alt="Business insights visualization" 
+            className="w-full max-w-2xl h-auto mx-auto"
+          />
         </div>
       </div>
     </section>
