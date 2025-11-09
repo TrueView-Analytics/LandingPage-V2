@@ -18,6 +18,16 @@ export default function Contact() {
     });
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    // Track Google Ads conversion
+    if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+      (window as any).gtag_report_conversion();
+    }
+    
+    // Let the form submit naturally to Formspree
+    // No need to prevent default - form will submit normally
+  };
+
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -76,7 +86,7 @@ export default function Contact() {
           </div>
 
           <div className="bg-gray-50 p-8 rounded-2xl">
-            <form className="space-y-6" action="https://formspree.io/f/mvgvrpoj" method="POST">
+            <form className="space-y-6" action="https://formspree.io/f/mvgvrpoj" method="POST" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
                   Full Name
