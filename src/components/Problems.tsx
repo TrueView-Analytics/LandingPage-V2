@@ -32,7 +32,7 @@ export default function Problems() {
             The Challenge
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Hotels face critical obstacles in leveraging customer feedback effectively
+            Businesses face critical obstacles in leveraging customer feedback effectively
           </p>
         </div>
 

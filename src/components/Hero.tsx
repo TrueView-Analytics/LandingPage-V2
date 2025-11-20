@@ -17,12 +17,12 @@ export default function Hero() {
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            Transform Hotel Reviews into
+            Turn Customer Feedback into
             <span className="text-blue-600"> Strategic Insights</span>
           </h1>
 
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Leverage AI-powered analytics to extract valuable insights from customer reviews, improve guest experience, and boost your hotel's reputation and profitability.
+            Leverage AI-powered analytics to extract valuable insights from customer feedback, improve guest experience, and boost your business's reputation and profitability.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -38,7 +38,7 @@ export default function Hero() {
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">81%</div>
-              <div className="text-sm text-gray-600">Travelers read reviews before booking</div>
+              <div className="text-sm text-gray-600">Customers read reviews before booking</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">+13%</div>
