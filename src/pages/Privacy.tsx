@@ -72,7 +72,7 @@ export default function Privacy() {
                                 <p>
                                     Cumplimos con el RGPD. Puedes ejercer tus derechos de acceso, rectificación, limitación y supresión. Conservamos los datos
                                     únicamente durante el tiempo necesario y puedes solicitar su eliminación escribiendo a
-                                    <a className="text-blue-600 hover:underline" href="mailto:privacy@trueviewanalytics.com"> privacy@trueviewanalytics.com</a>.
+                                    <a className="text-blue-600 hover:underline" href="mailto:info@trueviewanalytics.com"> info@trueviewanalytics.com</a>.
                                 </p>
 
                                 <h2 className="text-2xl font-bold">4. Seguridad de la información</h2>
@@ -95,7 +95,7 @@ export default function Privacy() {
                                 <h2 className="text-2xl font-bold">7. Contacto</h2>
                                 <p>
                                     Si tienes preguntas o quieres ejercer tus derechos, contáctanos en
-                                    <a className="text-blue-600 hover:underline" href="mailto:privacy@trueviewanalytics.com"> privacy@trueviewanalytics.com</a> o
+                                    <a className="text-blue-600 hover:underline" href="mailto:info@trueviewanalytics.com"> info@trueviewanalytics.com</a> o
                                     <Link className="text-blue-600 hover:underline" to="/contact"> ponte en contacto</Link> desde nuestra web.
                                 </p>
                             </div>
