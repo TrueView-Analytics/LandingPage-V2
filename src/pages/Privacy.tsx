@@ -1,7 +1,12 @@
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export default function Privacy() {
+    const { language } = useLanguage();
+    const t = translations[language];
+    
     return (
         <div className="pt-20">
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
@@ -11,11 +16,11 @@ export default function Privacy() {
                         className="inline-flex items-center space-x-2 text-white/80 hover:text-white mb-8 transition-colors"
                     >
                         <ArrowLeft size={20} />
-                        <span>Volver al inicio</span>
+                        <span>{t.backToHome}</span>
                     </Link>
 
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">Política de Privacidad</h1>
-                    <p className="text-sm text-white/90">Última actualización: 19/09/2025</p>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">{t.privacyPolicyTitle}</h1>
+                    <p className="text-sm text-white/90">{t.lastUpdated} 19/09/2025</p>
                 </div>
             </section>
 

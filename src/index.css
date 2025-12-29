@@ -29,3 +29,89 @@
 		@apply text-blue-600 hover:underline;
 	}
 }
+
+/* Hero dynamic text animation */
+@layer utilities {
+	/* Transición suave para el texto dinámico */
+	.duration-400 {
+		transition-duration: 400ms;
+	}
+	
+	/* Perspectiva 3D */
+	.perspective-1000 {
+		perspective: 1000px;
+	}
+	
+	/* Respeto por preferencias de reducción de movimiento */
+	@media (prefers-reduced-motion: reduce) {
+		.transition-all {
+			transition: none !important;
+		}
+		.translate-y-2 {
+			transform: none !important;
+		}
+		.translate-y-0 {
+			transform: none !important;
+		}
+		.animate-float,
+		.animate-progress,
+		.animate-pulse {
+			animation: none !important;
+		}
+	}
+}
+
+/* Animaciones para el dashboard mockup */
+@layer utilities {
+	/* Animación de flotación suave */
+	@keyframes float {
+		0%, 100% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
+	}
+	
+	.animate-float {
+		animation: float 3s ease-in-out infinite;
+	}
+	
+	/* Animación de barra de progreso */
+	@keyframes progress {
+		0% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+	
+	.animate-progress {
+		animation: progress 2s ease-in-out;
+	}
+}
+
+/* Estilos específicos para el h1 del hero - centrado perfecto */
+@layer components {
+	/* Asegurar que el h1 tenga centrado perfecto */
+	h1 {
+		text-align: center;
+	}
+	
+	/* El contenedor de texto rotativo debe mantener altura estable */
+	h1 > span:last-child {
+		/* Altura mínima para evitar saltos, ajustada a 2 líneas máximo */
+		min-height: clamp(2.4em, 5vw, 3em);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	/* El texto rotativo interno debe estar perfectamente centrado */
+	h1 > span:last-child > span {
+		width: 100%;
+		text-align: center;
+		line-height: 1.2;
+	}
+}

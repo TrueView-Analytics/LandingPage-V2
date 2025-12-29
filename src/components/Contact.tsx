@@ -1,7 +1,12 @@
 import { Mail, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export default function Contact() {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -33,20 +38,20 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Get in Touch
+            {t.getInTouch}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to transform your customer data into actionable insights? Let's talk.
+            {t.readyToTransform}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Contact Information
+              {t.contactInformation}
             </h3>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              Our team is ready to help you leverage the power of AI and data analytics to enhance your customer experience and grow your business.
+              {t.ourTeamReady}
             </p>
 
             <div className="space-y-6">
@@ -54,8 +59,8 @@ export default function Contact() {
                 <div className="bg-blue-100 p-3 rounded-lg">
                   <Mail className="text-blue-600" size={24} />
                 </div>
-                <div>
-                  <p className="font-semibold text-gray-900 mb-1">Email</p>
+              <div>
+                  <p className="font-semibold text-gray-900 mb-1">{t.emailLabel}</p>
                   <p className="text-gray-600">
                     <a href="mailto:info@trueviewanalytics.com" className="text-blue-600 underline">
                       info@trueviewanalytics.com
@@ -71,16 +76,16 @@ export default function Contact() {
                   <MapPin className="text-blue-600" size={24} />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 mb-1">Location</p>
+                  <p className="font-semibold text-gray-900 mb-1">{t.location}</p>
                   <p className="text-gray-600">Spain</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-8 p-6 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl text-white">
-              <p className="font-semibold mb-2">Schedule a Demo</p>
+              <p className="font-semibold mb-2">{t.scheduleDemoHeading}</p>
               <p className="text-blue-50 text-sm">
-                See our platform in action and discover how TrueView Analytics can transform your business.
+                {t.scheduleDemoText}
               </p>
             </div>
           </div>
@@ -89,7 +94,7 @@ export default function Contact() {
             <form className="space-y-6" action="https://formspree.io/f/mvgvrpoj" method="POST" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Full Name
+                  {t.fullName}
                 </label>
                 <input
                   type="text"
@@ -97,14 +102,14 @@ export default function Contact() {
                   name="name"
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
-                  placeholder="John Doe"
+                  placeholder={t.fullNamePlaceholder}
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Email Address
+                  {t.emailAddress}
                 </label>
                 <input
                   type="email"
@@ -112,14 +117,14 @@ export default function Contact() {
                   name="email"
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
-                  placeholder="john@example.com"
+                  placeholder={t.emailPlaceholder}
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Company Name
+                  {t.companyName}
                 </label>
                 <input
                   type="text"
@@ -127,14 +132,14 @@ export default function Contact() {
                   name="company"
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
-                  placeholder="Your Hotel or Business"
+                  placeholder={t.companyPlaceholder}
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Message
+                  {t.messageLabel}
                 </label>
                 <textarea
                   id="message"
@@ -142,7 +147,7 @@ export default function Contact() {
                   onChange={handleChange}
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all resize-none"
-                  placeholder="Tell us about your needs..."
+                  placeholder={t.messagePlaceholder}
                   required
                 />
               </div>
@@ -151,7 +156,7 @@ export default function Contact() {
                 type="submit"
                 className="w-full bg-blue-600 text-white px-6 py-4 rounded-lg hover:bg-blue-700 transition-all font-semibold flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
               >
-                <span>Send Message</span>
+                <span>{t.sendMessage}</span>
                 <Send size={20} />
               </button>
             </form>

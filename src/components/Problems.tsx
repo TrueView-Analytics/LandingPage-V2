@@ -1,25 +1,30 @@
 import { Users, Megaphone, Target } from 'lucide-react';
 import insightsImage from '../assets/insights.png';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../context/translations';
 
 export default function Problems() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const problems = [
     {
       icon: Users,
-      title: "Untapped Review Data",
-      description: "Hotels and service businesses don't leverage their online reviews to make strategic decisions.",
+      titleKey: "lostInFeedback",
+      descKey: "lostInFeedbackDesc",
       color: "bg-blue-50 text-blue-600"
     },
     {
       icon: Megaphone,
-      title: "Manual Analysis",
-      description: "Review information is analyzed manually or superficially, consuming time and generating incomplete conclusions that affect decision quality and service.",
+      titleKey: "inconsistentResponse",
+      descKey: "inconsistentResponseDesc",
       color: "bg-blue-600 text-white",
       featured: true
     },
     {
       icon: Target,
-      title: "Missing Segmentation",
-      description: "Lack of deep, segmented analysis prevents detecting satisfaction or dissatisfaction patterns by client type, limiting actions to improve experience and loyalty.",
+      titleKey: "missedOpportunities",
+      descKey: "missedOpportunitiesDesc",
       color: "bg-blue-50 text-blue-600"
     }
   ];
@@ -29,10 +34,10 @@ export default function Problems() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            The Challenge
+            {t.whyNeed}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Businesses face critical obstacles in leveraging customer feedback effectively
+            {t.problems}
           </p>
         </div>
 
@@ -56,12 +61,12 @@ export default function Problems() {
                 <h3 className={`text-2xl font-bold mb-4 ${
                   problem.featured ? 'text-white' : 'text-gray-900'
                 }`}>
-                  {problem.title}
+                  {t[problem.titleKey as keyof typeof t]}
                 </h3>
                 <p className={`leading-relaxed ${
                   problem.featured ? 'text-blue-50' : 'text-gray-600'
                 }`}>
-                  {problem.description}
+                  {t[problem.descKey as keyof typeof t]}
                 </p>
               </div>
             );
