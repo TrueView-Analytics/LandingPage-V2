@@ -14,10 +14,12 @@ export default function DiagnosisModal({ isOpen, onClose }: DiagnosisModalProps)
     email: '',
     company: '',
     phone: '',
+    servicio: '',
+    propiedades: '',
     message: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -132,6 +134,46 @@ export default function DiagnosisModal({ isOpen, onClose }: DiagnosisModalProps)
                 placeholder={language === 'es' ? 'Mi Hotel o Negocio' : 'My Hotel or Business'}
                 required
               />
+            </div>
+
+            <div>
+              <label htmlFor="diagnosis-servicio" className="block text-sm font-semibold text-gray-900 mb-2">
+                {language === 'es' ? 'Servicio' : 'Service'} *
+              </label>
+              <select
+                id="diagnosis-servicio"
+                name="servicio"
+                value={formData.servicio}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
+                required
+              >
+                <option value="">{language === 'es' ? 'Selecciona un servicio' : 'Select a service'}</option>
+                <option value="SAAS HOTELES">SAAS HOTELES</option>
+                <option value="SAAS PROPIEDADES">SAAS PROPIEDADES</option>
+                <option value="SAAS PYMES">SAAS PYMES</option>
+                <option value="SERVICIOS ESPECIALIZADOS">SERVICIOS ESPECIALIZADOS</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="diagnosis-propiedades" className="block text-sm font-semibold text-gray-900 mb-2">
+                {language === 'es' ? '¿Cuántas Propiedades gestionas?' : 'How many properties do you manage?'} *
+              </label>
+              <select
+                id="diagnosis-propiedades"
+                name="propiedades"
+                value={formData.propiedades}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
+                required
+              >
+                <option value="">{language === 'es' ? 'Selecciona una opción' : 'Select an option'}</option>
+                <option value="1">1</option>
+                <option value="2-5">2-5</option>
+                <option value="6-20">6-20</option>
+                <option value="+20">+20</option>
+              </select>
             </div>
 
             <div>

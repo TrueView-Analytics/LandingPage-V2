@@ -11,12 +11,14 @@ export default function Contact() {
     name: '',
     email: '',
     company: '',
+    servicio: '',
+    propiedades: '',
     message: ''
   });
 
   // form is submitted via native POST to Formspree; keep formData for optional client-side use
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -135,6 +137,44 @@ export default function Contact() {
                   placeholder={t.companyPlaceholder}
                   required
                 />
+              </div>
+
+              <div>
+                <label htmlFor="servicio" className="block text-sm font-semibold text-gray-900 mb-2">
+                  {language === 'es' ? 'Servicio' : 'Service'}
+                </label>
+                <select
+                  id="servicio"
+                  name="servicio"
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
+                  required
+                >
+                  <option value="">{language === 'es' ? 'Selecciona un servicio' : 'Select a service'}</option>
+                  <option value="SAAS HOTELES">SAAS HOTELES</option>
+                  <option value="SAAS PROPIEDADES">SAAS PROPIEDADES</option>
+                  <option value="SAAS PYMES">SAAS PYMES</option>
+                  <option value="SERVICIOS ESPECIALIZADOS">SERVICIOS ESPECIALIZADOS</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="propiedades" className="block text-sm font-semibold text-gray-900 mb-2">
+                  {language === 'es' ? '¿Cuántas Propiedades gestionas?' : 'How many properties do you manage?'}
+                </label>
+                <select
+                  id="propiedades"
+                  name="propiedades"
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
+                  required
+                >
+                  <option value="">{language === 'es' ? 'Selecciona una opción' : 'Select an option'}</option>
+                  <option value="1">1</option>
+                  <option value="2-5">2-5</option>
+                  <option value="6-20">6-20</option>
+                  <option value="+20">+20</option>
+                </select>
               </div>
 
               <div>

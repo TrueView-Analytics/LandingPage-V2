@@ -11,12 +11,14 @@ export default function ContactPage() {
     name: '',
     email: '',
     company: '',
+    servicio: '',
+    propiedades: '',
     message: ''
   });
 
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -178,6 +180,44 @@ export default function ContactPage() {
                     placeholder={t.companyPlaceholder}
                     required
                   />
+                </div>
+
+                <div>
+                  <label htmlFor="servicio" className="block text-sm font-semibold mb-2">
+                    {language === 'es' ? 'Servicio' : 'Service'}
+                  </label>
+                  <select
+                    id="servicio"
+                    name="servicio"
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-slate-400 focus:ring-2 focus:ring-white focus:border-transparent outline-none transition-all"
+                    required
+                  >
+                    <option value="" className="text-gray-800">{language === 'es' ? 'Selecciona un servicio' : 'Select a service'}</option>
+                    <option value="SAAS HOTELES" className="text-gray-800">SAAS HOTELES</option>
+                    <option value="SAAS PROPIEDADES" className="text-gray-800">SAAS PROPIEDADES</option>
+                    <option value="SAAS PYMES" className="text-gray-800">SAAS PYMES</option>
+                    <option value="SERVICIOS ESPECIALIZADOS" className="text-gray-800">SERVICIOS ESPECIALIZADOS</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="propiedades" className="block text-sm font-semibold mb-2">
+                    {language === 'es' ? '¿Cuántas Propiedades gestionas?' : 'How many properties do you manage?'}
+                  </label>
+                  <select
+                    id="propiedades"
+                    name="propiedades"
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-slate-400 focus:ring-2 focus:ring-white focus:border-transparent outline-none transition-all"
+                    required
+                  >
+                    <option value="" className="text-gray-800">{language === 'es' ? 'Selecciona una opción' : 'Select an option'}</option>
+                    <option value="1" className="text-gray-800">1</option>
+                    <option value="2-5" className="text-gray-800">2-5</option>
+                    <option value="6-20" className="text-gray-800">6-20</option>
+                    <option value="+20" className="text-gray-800">+20</option>
+                  </select>
                 </div>
 
                 <div>
