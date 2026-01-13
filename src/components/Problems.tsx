@@ -82,170 +82,128 @@ export default function Problems() {
 }
 
 function AnalyticsVisualization() {
+  const properties = [
+    {
+      name: "Propiedad 1",
+      location: "Alicante, España",
+      rating: 7.8,
+      booking: 446,
+      reviews: 316,
+      positive: 1441,
+      negative: 1022,
+      nss: "16.6%",
+      ratio: "1.41"
+    },
+    {
+      name: "Propiedad 2",
+      location: "Madrid, España",
+      rating: 8.2,
+      booking: 25,
+      reviews: 16,
+      positive: 64,
+      negative: 31,
+      nss: "34.0%",
+      ratio: "2.06"
+    },
+    {
+      name: "Propiedad 3",
+      location: "Valencia, España",
+      rating: 8.9,
+      booking: 790,
+      reviews: 527,
+      positive: 725,
+      negative: 275,
+      nss: "45.0%",
+      ratio: "2.64"
+    }
+  ];
+
   return (
-    <div className="w-full max-w-3xl px-4">
-      <div className="relative h-[380px] md:h-[420px]">
-        
-        {/* Chart 1 - Line Chart (Back Left) */}
-        <div className="absolute top-0 left-0 w-[280px] sm:w-[350px] md:w-[420px] h-56 sm:h-64 md:h-72 bg-gradient-to-br from-white to-blue-50/50 rounded-2xl md:rounded-3xl shadow-2xl border-2 md:border-4 border-blue-600 p-4 md:p-6 z-10 transform rotate-[-3deg] hover:rotate-[-1deg] hover:scale-105 transition-all duration-500">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+    <div className="w-full max-w-6xl px-4 py-8">
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 px-6 py-8 border-b-4 border-blue-900 text-center">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2h2v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
               </svg>
             </div>
-            <div>
-              <h3 className="text-base font-bold text-gray-900">Trend Analysis</h3>
-              <p className="text-xs text-gray-500">Growth metrics</p>
-            </div>
+            <h3 className="text-3xl font-bold text-white">Propiedades</h3>
           </div>
-          <svg viewBox="0 0 300 140" className="w-full h-40">
-            <defs>
-              <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.05" />
-              </linearGradient>
-            </defs>
-            {/* Grid */}
-            {[1, 2, 3, 4, 5].map((i) => (
-              <line key={i} x1="25" y1={i * 26} x2="290" y2={i * 26} stroke="#e5e7eb" strokeWidth="1.5" />
-            ))}
-            {/* Area fill */}
-            <polygon points="30,120 30,75 75,60 120,70 165,35 210,50 255,25 280,40 280,120" fill="url(#lineGradient)" />
-            {/* Line */}
-            <polyline points="30,75 75,60 120,70 165,35 210,50 255,25 280,40" fill="none" stroke="#2563eb" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-            {/* Secondary line */}
-            <polyline points="30,90 75,75 120,85 165,50 210,65 255,45 280,55" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
-          </svg>
+          <p className="text-blue-100">Centraliza y compara el rendimiento de tus propiedades en un solo lugar</p>
         </div>
 
-        {/* Chart 2 - Donut Chart (Center) */}
-        <div className="absolute top-12 sm:top-14 md:top-16 left-1/2 transform -translate-x-1/2 w-64 sm:w-72 md:w-80 h-64 sm:h-72 md:h-80 bg-gradient-to-br from-white to-purple-50/50 rounded-2xl md:rounded-3xl shadow-2xl border-2 md:border-4 border-blue-600 p-4 md:p-6 z-30 hover:scale-110 transition-all duration-500">
-          <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-blue-600 to-blue-500 rounded-lg md:rounded-xl flex items-center justify-center shadow-lg">
-              <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5a1 1 0 112 0v4a1 1 0 11-2 0V5zm1 8a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="text-sm md:text-base font-bold text-gray-900">Sentiment Score</h3>
-              <p className="text-[10px] md:text-xs text-gray-500">Customer feedback</p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-32 sm:h-36 md:h-44">
-            <div className="relative">
-              <svg viewBox="0 0 160 160" className="w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 transform -rotate-90">
-                <defs>
-                  <linearGradient id="positiveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#22c55e" />
-                    <stop offset="100%" stopColor="#22c55e" />
-                  </linearGradient>
-                  <linearGradient id="neutralGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#6b7280" />
-                    <stop offset="100%" stopColor="#6b7280" />
-                  </linearGradient>
-                  <linearGradient id="negativeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#ef4444" />
-                    <stop offset="100%" stopColor="#ef4444" />
-                  </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="55" fill="none" stroke="#e5e7eb" strokeWidth="11" />
-                {/* Positive - 70% (241.15 of 345.58) */}
-                <circle 
-                  cx="80" 
-                  cy="80" 
-                  r="55" 
-                  fill="none" 
-                  stroke="url(#positiveGrad)" 
-                  strokeWidth="11"
-                  strokeDasharray="241.15 345.58"
-                  strokeLinecap="round"
-                />
-                {/* Neutral - 20% (69.12 of 345.58) */}
-                <circle 
-                  cx="80" 
-                  cy="80" 
-                  r="55" 
-                  fill="none" 
-                  stroke="url(#neutralGrad)" 
-                  strokeWidth="11"
-                  strokeDasharray="69.12 345.58"
-                  strokeDashoffset="-241.15"
-                  strokeLinecap="round"
-                />
-                {/* Negative - 10% (34.56 of 345.58) */}
-                <circle 
-                  cx="80" 
-                  cy="80" 
-                  r="55" 
-                  fill="none" 
-                  stroke="url(#negativeGrad)" 
-                  strokeWidth="11"
-                  strokeDasharray="34.56 345.58"
-                  strokeDashoffset="-310.27"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-xl sm:text-2xl font-black bg-gradient-to-br from-green-600 to-green-400 bg-clip-text text-transparent">Overall</span>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-around mt-1 px-1 md:px-2">
-            <div className="text-center">
-              <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-green-500 rounded-full mx-auto mb-1"></div>
-              <p className="text-[9px] md:text-[10px] font-bold text-gray-700">70%</p>
-              <p className="text-[8px] md:text-[9px] text-gray-500">Positive</p>
-            </div>
-            <div className="text-center">
-              <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-gray-500 rounded-full mx-auto mb-1"></div>
-              <p className="text-[9px] md:text-[10px] font-bold text-gray-700">20%</p>
-              <p className="text-[8px] md:text-[9px] text-gray-500">Neutral</p>
-            </div>
-            <div className="text-center">
-              <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-red-500 rounded-full mx-auto mb-1"></div>
-              <p className="text-[9px] md:text-[10px] font-bold text-gray-700">10%</p>
-              <p className="text-[8px] md:text-[9px] text-gray-500">Negative</p>
-            </div>
-          </div>
+        {/* Table */}
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50 border-b-2 border-blue-300">
+              <tr>
+                <th className="px-6 py-4 text-left">
+                  <input type="checkbox" className="w-5 h-5 rounded border-blue-300 cursor-pointer" />
+                </th>
+                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Propiedad</th>
+                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Ubicación</th>
+                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Puntuación</th>
+                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Reviews</th>
+                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Menciones</th>
+                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-green-700 bg-green-50/50">Positivas</th>
+                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-red-700 bg-red-50/50">Negativas</th>
+                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-orange-900 bg-orange-50/50">NSS</th>
+                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Ratio</th>
+              </tr>
+            </thead>
+            <tbody>
+              {properties.map((property, index) => (
+                <tr key={index} className="border-b border-gray-200 hover:bg-blue-50/30 transition-colors">
+                  <td className="px-6 py-4">
+                    <input type="checkbox" className="w-5 h-5 rounded border-gray-300" />
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2h2v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">{property.name}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-sm text-gray-600">{property.location}</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-yellow-400">⭐</span>
+                      <span className="font-semibold text-gray-900">{property.rating}</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-sm text-gray-700">{property.booking}</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">{property.reviews}</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-green-600">{property.positive}</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trending-up w-4 h-4 text-green-600"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-red-600">{property.negative}</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trending-down w-4 h-4 text-red-600"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline><polyline points="16 17 22 17 22 11"></polyline></svg>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-sm font-semibold text-orange-600">{property.nss}</td>
+                  <td className="px-6 py-4 text-sm font-semibold text-gray-900">{property.ratio}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
-        {/* Chart 3 - Bar Chart (Right) */}
-        <div className="absolute top-6 sm:top-7 md:top-8 right-0 w-[280px] sm:w-[320px] md:w-[360px] h-52 sm:h-56 md:h-64 bg-gradient-to-br from-white to-cyan-50/50 rounded-2xl md:rounded-3xl shadow-2xl border-2 md:border-4 border-blue-600 p-4 md:p-6 z-20 transform rotate-[2deg] hover:rotate-[1deg] hover:scale-105 transition-all duration-500">
-          <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-blue-600 to-blue-500 rounded-lg md:rounded-xl flex items-center justify-center shadow-lg">
-              <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="text-sm md:text-base font-bold text-gray-900">Weekly Reviews</h3>
-              <p className="text-[10px] md:text-xs text-gray-500">Last 7 days</p>
-            </div>
-          </div>
-          <div className="flex items-end justify-around gap-1.5 sm:gap-2 px-3 md:px-4 h-24 sm:h-28 md:h-32">
-            {[60, 95, 70, 115, 80, 100, 120].map((height, i) => {
-              const values = [23, 35, 28, 42, 31, 38, 45];
-              return (
-                <div key={i} className="flex-1 flex flex-col items-center justify-end group">
-                  <span className="text-[9px] md:text-[10px] font-bold text-gray-700 mb-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    {values[i]}
-                  </span>
-                  <div 
-                    className={`w-full rounded-t-md md:rounded-t-lg shadow-md transition-all duration-300 group-hover:scale-110 ${
-                      i % 3 === 0 ? 'bg-gradient-to-t from-blue-700 via-blue-500 to-blue-400' :
-                      i % 3 === 1 ? 'bg-gradient-to-t from-cyan-600 via-cyan-400 to-cyan-300' :
-                      'bg-gradient-to-t from-green-600 via-green-400 to-green-300'
-                    }`}
-                    style={{height: `${height}px`}}
-                  />
-                  <span className="text-[8px] md:text-[9px] font-bold text-gray-500 mt-1 md:mt-1.5">{['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}</span>
-                </div>
-              );
-            })}
-          </div>
+        {/* Footer */}
+        <div className="bg-gray-50 px-6 py-4 border-t border-gray-200 text-sm text-gray-600">
+          <p>Total Properties: <span className="font-semibold text-gray-900">3</span></p>
         </div>
-
       </div>
     </div>
   );

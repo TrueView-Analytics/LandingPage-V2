@@ -64,7 +64,7 @@ export default function DiagnosisModal({ isOpen, onClose }: DiagnosisModalProps)
           </p>
 
           <form
-            action="https://formspree.io/f/xanyaznr"
+            action="https://formspree.io/f/mvgvrpoj"
             method="POST"
             onSubmit={handleSubmit}
             className="space-y-4"

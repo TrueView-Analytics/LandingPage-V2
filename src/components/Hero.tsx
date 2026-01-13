@@ -98,19 +98,12 @@ export default function Hero() {
                 <span>{t.requestDemoFree}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button 
-                onClick={() => {
-                  const element = document.getElementById('platform');
-                  if (element) {
-                    const yOffset = -80;
-                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                  }
-                }}
-                className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 border border-white/40 hover:border-white/60"
+              <a
+                href="/services"
+                className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 border border-white/40 hover:border-white/60 inline-block text-center"
               >
                 {t.exploreSolutions}
-              </button>
+              </a>
             </div>
 
             {/* Social icons (Instagram, LinkedIn) */}
