@@ -1,4 +1,4 @@
-import { Users, Megaphone, Target } from 'lucide-react';
+import { Users, Megaphone, Target, BarChart3, Gauge, Eye } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../context/translations';
 
@@ -29,7 +29,7 @@ export default function Problems() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white pb-2">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white pb-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
@@ -72,16 +72,59 @@ export default function Problems() {
           })}
         </div>
 
-        {/* Analytics Visualization */}
-        <div className="mt-20 flex justify-center">
-          <AnalyticsVisualization />
+        <div className="mt-20 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <div className="space-y-6">
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+              {t.portfolioControlTitle}
+            </h3>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              {t.portfolioControlDesc}
+            </p>
+
+            <div className="space-y-4">
+              {[
+                {
+                  icon: BarChart3,
+                  title: t.portfolioPoint1Title,
+                  description: t.portfolioPoint1Desc
+                },
+                {
+                  icon: Gauge,
+                  title: t.portfolioPoint2Title,
+                  description: t.portfolioPoint2Desc
+                },
+                {
+                  icon: Eye,
+                  title: t.portfolioPoint3Title,
+                  description: t.portfolioPoint3Desc
+                }
+              ].map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="mt-1 inline-flex w-6 h-6 items-center justify-center rounded-md bg-blue-50">
+                      <Icon className="w-4 h-4 text-blue-600" />
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">
+                      <span className="font-semibold text-gray-900">{item.title}: </span>
+                      {item.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="w-full">
+            <AnalyticsVisualization className="max-w-3xl mx-auto lg:mx-0" />
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function AnalyticsVisualization() {
+function AnalyticsVisualization({ className = '' }: { className?: string }) {
   const properties = [
     {
       name: "Propiedad 1",
@@ -119,81 +162,71 @@ function AnalyticsVisualization() {
   ];
 
   return (
-    <div className="w-full max-w-6xl px-4 py-8">
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+    <div className={`w-full ${className}`}>
+      <div className="bg-white rounded-2xl shadow-xl shadow-blue-100/60 border border-gray-200 overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 px-6 py-8 border-b-4 border-blue-900 text-center">
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+        <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 px-4 py-5 border-b-4 border-blue-900 text-center">
+          <div className="flex items-center justify-center gap-2 mb-1.5">
+            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
               <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2h2v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
               </svg>
             </div>
-            <h3 className="text-3xl font-bold text-white">Propiedades</h3>
+            <h3 className="text-2xl font-bold text-white">Propiedades</h3>
           </div>
-          <p className="text-blue-100">Centraliza y compara el rendimiento de tus propiedades en un solo lugar</p>
+          <p className="text-xs sm:text-sm text-blue-100">Centraliza y compara el rendimiento de tus propiedades en un solo lugar</p>
         </div>
 
         {/* Table */}
-        <div className="overflow-x-auto">
-          <table className="w-full">
+        <div className="overflow-hidden">
+          <table className="w-full table-fixed">
             <thead className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50 border-b-2 border-blue-300">
               <tr>
-                <th className="px-6 py-4 text-left">
-                  <input type="checkbox" className="w-5 h-5 rounded border-blue-300 cursor-pointer" />
-                </th>
-                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Propiedad</th>
-                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Ubicación</th>
-                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Puntuación</th>
-                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Reviews</th>
-                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Menciones</th>
-                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-green-700 bg-green-50/50">Positivas</th>
-                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-red-700 bg-red-50/50">Negativas</th>
-                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-orange-900 bg-orange-50/50">NSS</th>
-                <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50/50">Ratio</th>
+                <th className="px-2 py-3 text-left text-[10px] font-bold uppercase tracking-wide text-blue-900 bg-blue-50/50">Propiedad</th>
+                <th className="px-2 py-3 text-left text-[10px] font-bold uppercase tracking-wide text-blue-900 bg-blue-50/50">Punt.</th>
+                <th className="px-2 py-3 text-left text-[10px] font-bold uppercase tracking-wide text-blue-900 bg-blue-50/50">Reviews</th>
+                <th className="px-2 py-3 text-left text-[10px] font-bold uppercase tracking-wide text-green-700 bg-green-50/50">Positivas</th>
+                <th className="px-2 py-3 text-left text-[10px] font-bold uppercase tracking-wide text-red-700 bg-red-50/50">Negativas</th>
+                <th className="px-2 py-3 text-left text-[10px] font-bold uppercase tracking-wide text-orange-900 bg-orange-50/50">NSS</th>
+                <th className="px-2 py-3 text-left text-[10px] font-bold uppercase tracking-wide text-blue-900 bg-blue-50/50">Ratio</th>
               </tr>
             </thead>
             <tbody>
               {properties.map((property, index) => (
                 <tr key={index} className="border-b border-gray-200 hover:bg-blue-50/30 transition-colors">
-                  <td className="px-6 py-4">
-                    <input type="checkbox" className="w-5 h-5 rounded border-gray-300" />
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <td className="px-2 py-3">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2h2v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                         </svg>
                       </div>
-                      <div>
-                        <p className="font-semibold text-gray-900">{property.name}</p>
+                      <div className="min-w-0">
+                        <p className="font-semibold text-gray-900 text-xs leading-tight truncate">{property.name}</p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-sm text-gray-600">{property.location}</td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-yellow-400">⭐</span>
-                      <span className="font-semibold text-gray-900">{property.rating}</span>
+                  <td className="px-2 py-3">
+                    <div className="flex items-center gap-1">
+                      <span className="text-[11px]">⭐</span>
+                      <span className="font-semibold text-gray-900 text-xs">{property.rating}</span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-sm text-gray-700">{property.booking}</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">{property.reviews}</td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-green-600">{property.positive}</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trending-up w-4 h-4 text-green-600"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                  <td className="px-2 py-3 text-xs text-gray-700">{property.booking}</td>
+                  <td className="px-2 py-3">
+                    <div className="flex items-center gap-1">
+                      <span className="font-semibold text-green-600 text-xs">{property.positive}</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trending-up w-3.5 h-3.5 text-green-600"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
                     </div>
                   </td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-red-600">{property.negative}</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trending-down w-4 h-4 text-red-600"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline><polyline points="16 17 22 17 22 11"></polyline></svg>
+                  <td className="px-2 py-3">
+                    <div className="flex items-center gap-1">
+                      <span className="font-semibold text-red-600 text-xs">{property.negative}</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trending-down w-3.5 h-3.5 text-red-600"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline><polyline points="16 17 22 17 22 11"></polyline></svg>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-sm font-semibold text-orange-600">{property.nss}</td>
-                  <td className="px-6 py-4 text-sm font-semibold text-gray-900">{property.ratio}</td>
+                  <td className="px-2 py-3 text-xs font-semibold text-orange-600">{property.nss}</td>
+                  <td className="px-2 py-3 text-xs font-semibold text-gray-900">{property.ratio}</td>
                 </tr>
               ))}
             </tbody>
@@ -201,7 +234,7 @@ function AnalyticsVisualization() {
         </div>
 
         {/* Footer */}
-        <div className="bg-gray-50 px-6 py-4 border-t border-gray-200 text-sm text-gray-600">
+        <div className="bg-gray-50 px-4 py-3 border-t border-gray-200 text-xs text-gray-600">
           <p>Total Properties: <span className="font-semibold text-gray-900">3</span></p>
         </div>
       </div>

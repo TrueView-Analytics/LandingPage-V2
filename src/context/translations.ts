@@ -31,13 +31,21 @@ export const translations = {
     
     // Problems Section
     problems: 'Lo que te está frenando (y costando dinero) sin que lo sepas',
-    whyNeed: '¿Por Qué Necesitas TrueView?',
+    whyNeed: 'Porque tu puntuación en Booking no baja por casualidad',
     lostInFeedback: 'Ruido en las reseñas',
     lostInFeedbackDesc: 'Tienes volumen, pero no claridad: temas mezclados, opiniones repetidas y señales ocultas. Terminas actuando por intuición',
     inconsistentResponse: 'Acciones sin priorización',
     inconsistentResponseDesc: 'Se hacen cambios sin saber qué impacta en puntuación y satisfacción. Sin foco, mejoras cosas… pero no sabes qué mueve la aguja',
     missedOpportunities: 'Oportunidades perdidas',
     missedOpportunitiesDesc: 'No detectas patrones por tipo de cliente, temporada o categorías. Pierdes ventaja frente a competidores más rápidos',
+    portfolioControlTitle: 'Control total de todo tu portafolio en una sola pantalla',
+    portfolioControlDesc: 'TrueView centraliza los datos de todas tus propiedades para que evalúes el rendimiento general de un vistazo y sepas dónde enfocar tus esfuerzos.',
+    portfolioPoint1Title: 'Comparativa en tiempo real',
+    portfolioPoint1Desc: 'Identifica rápidamente qué propiedad tiene la mejor puntuación y cuál necesita intervención inmediata.',
+    portfolioPoint2Title: 'Métricas estandarizadas',
+    portfolioPoint2Desc: 'Mide todas tus ubicaciones bajo las mismas reglas. Compara el volumen de reviews, el sentimiento (NSS) y la ratio de menciones positivas vs. negativas sin esfuerzo.',
+    portfolioPoint3Title: 'Vista de pájaro (Bird\'s-eye view)',
+    portfolioPoint3Desc: 'Pasa del caos de las opiniones individuales a una visión estratégica de alto nivel para tu grupo hotelero.',
     
     // Platform Section
     platform: 'Plataforma',
@@ -493,13 +501,21 @@ export const translations = {
     
     // Problems Section
     problems: 'What\'s holding you back (and costing you money) without you knowing it',
-    whyNeed: 'Why You Need TrueView?',
+    whyNeed: 'Your Booking score isn\'t dropping by chance',
     lostInFeedback: 'Review noise',
     lostInFeedbackDesc: 'You have volume, but not clarity: mixed topics, repeated opinions and hidden signals. You end up acting on intuition',
     inconsistentResponse: 'Actions without prioritization',
     inconsistentResponseDesc: 'Changes are made without knowing what impacts score and satisfaction. Without focus, you improve things... but you don\'t know what moves the needle',
     missedOpportunities: 'Lost opportunities',
     missedOpportunitiesDesc: 'You don\'t detect patterns by customer type, season or categories. You lose advantage to faster competitors',
+    portfolioControlTitle: 'Total control of your entire portfolio on one screen',
+    portfolioControlDesc: 'TrueView centralizes data from all your properties so you can assess overall performance at a glance and know where to focus your efforts.',
+    portfolioPoint1Title: 'Real-time comparison',
+    portfolioPoint1Desc: 'Quickly identify which property has the best score and which one needs immediate intervention.',
+    portfolioPoint2Title: 'Standardized metrics',
+    portfolioPoint2Desc: 'Measure all your locations using the same rules. Compare review volume, sentiment (NSS), and the ratio of positive vs. negative mentions effortlessly.',
+    portfolioPoint3Title: 'Bird\'s-eye view',
+    portfolioPoint3Desc: 'Move from the chaos of individual opinions to a high-level strategic view of your hotel group.',
     
     // Platform Section
     platform: 'Platform',
