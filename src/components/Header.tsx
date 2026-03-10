@@ -29,12 +29,6 @@ export default function Header() {
           </Link>
 
           <div className="hidden md:flex items-center space-x-2 ml-8">
-            <Link to="/#about">
-            <button className="text-gray-700 hover:text-blue-600 transition-colors text-base px-3 py-3">
-              {t.aboutUs}
-            </button>
-            </Link>
-            
             {/* Services Dropdown */}
             <div className="relative group">
               <button className={`transition-colors text-base px-3 py-3 flex items-center gap-1 ${isServicesPage ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'}`}>
@@ -118,12 +112,6 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <div className="flex flex-col space-y-4">
-              <Link to="/#about">
-              <button onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition-colors text-base py-3 text-left">
-                {t.aboutUs}
-              </button>
-              </Link>
-              
               {/* Mobile Services Dropdown */}
               <div>
                 <button 
