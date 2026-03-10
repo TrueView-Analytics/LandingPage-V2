@@ -257,6 +257,8 @@ function Hero() {
 
 function Services() {
   const { t } = useLanguage();
+
+  return null;
   
   return (
     <section className="py-24 px-6 bg-white">
@@ -821,10 +823,6 @@ function FAQ({ openFaq, setOpenFaq }: { openFaq: number | null; setOpenFaq: (n: 
     {
       q: t.faqOtherQ4,
       a: t.faqOtherA4
-    },
-    {
-      q: t.faqOtherQ5,
-      a: t.faqOtherA5
     }
   ];
 
@@ -865,12 +863,9 @@ function CTA({ onOpenModal }: { onOpenModal: () => void }) {
   return (
     <section className="py-32 px-6 bg-blue-600">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-20 md:mb-24 leading-tight">
           {t.transformDataDecisions}
         </h2>
-        <p className="text-xl mb-12 text-blue-100 leading-relaxed">
-          {t.ctaDescription}
-        </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/contact" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-base hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
             <Calendar className="w-5 h-5" />
